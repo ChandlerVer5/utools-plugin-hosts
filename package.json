@@ -14,7 +14,7 @@
     "cloudbase-adapter-electron": "^1.0.8",
     "monaco-editor": "^0.32.1",
     "pinia": "^2.0.11",
-    "vue": "^3.2.25"
+    "vue": "^3.2.31"
   },
   "devDependencies": {
     "@mdi/font": "^6.5.95",

@@ -4,7 +4,7 @@ import Common from './common.vue';
 import Custom from './custom.vue';
 import Settings from './settings.vue';
 import { useHostsStore } from '@/stores/hosts';
-import { login } from '@/coomon/cloud_dev';
+// import { login } from '@/coomon/cloud_dev';
 
 defineProps<{ msg: string }>();
 const active = ref(0);
