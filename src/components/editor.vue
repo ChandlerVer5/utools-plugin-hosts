@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useHostsStore } from '@/stores/hosts';
-import { monaco, monacoOptions } from '../monaco/customMonaco';
+import { createEditor } from '@/monaco';
 
-const { systemHosts, readSystemHosts, showSystemHosts } = useHostsStore();
+const { systemHosts, readSystemHosts, changeHostsContent, revealHostsFile } =
+  useHostsStore();
 
 const systemHostContent = readSystemHosts();
-console.log(systemHostContent);
 onMounted(() => {
-  monaco.editor.create(document.querySelector('#editor')!, {
-    ...monacoOptions,
+  createEditor('#editor', {
     value: systemHostContent
   });
+  console.log(systemHosts);
+  setTimeout(() => {
+    changeHostsContent({
+      selected: 'custom',
+      tmpContent: '你好啊👌！'
+    });
+  }, 3000);
 });
 </script>
 
@@ -21,7 +27,7 @@ onMounted(() => {
 
     <!-- footer  底部区域-->
     <div class="footer">
-      <p class="footer-local" @click="showSystemHosts">打开 hosts 文件</p>
+      <p class="footer-local" @click="revealHostsFile">打开 hosts 文件</p>
       <p class="footer-status">只读，无法直接编辑</p>
     </div>
   </div>

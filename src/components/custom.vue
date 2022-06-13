@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useHostsStore } from '@/stores/hosts';
-const { hosts, showSystemHosts } = useHostsStore();
+const { hosts, revealHostsFile } = useHostsStore();
 </script>
 
 <template>

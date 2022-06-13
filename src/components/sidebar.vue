@@ -14,7 +14,7 @@ const items = [
   { text: 'Conversions', icon: 'mdi-flag' }
 ];
 
-const { showSystemHosts } = useHostsStore();
+const { revealHostsFile } = useHostsStore();
 
 /* const loginCB = () => {
   console.log('start login!');
@@ -48,6 +48,11 @@ const { showSystemHosts } = useHostsStore();
   padding: 10px 0;
   color: #333;
 
+  &-top button {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
   &-list {
     overflow: auto;
     text-align: left;

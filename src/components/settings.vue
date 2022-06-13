@@ -7,7 +7,7 @@ const showHelpDialog = ref(false);
 const showRuleDialog = ref(false);
 
 const addRule = () => {};
-const { showSystemHosts } = useHostsStore();
+const { revealHostsFile } = useHostsStore();
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const { showSystemHosts } = useHostsStore();
         文件属性中切换到「安全」标签，点击「编辑」，选择你当前的登录用户名，在权限列表中勾选「写入」，保存退出
       </p>
     </var-cell>
-    <a @click="showSystemHosts">打开 hosts 文件所在目录</a>
+    <a @click="revealHostsFile">打开 hosts 文件所在目录</a>
   </var-dialog>
 
   <!-- TODO : rules props control internal var-dialog-->
@@ -42,19 +42,19 @@ const { showSystemHosts } = useHostsStore();
   <!-- 设置区域 -->
   <div class="sidebar-footer">
     <var-row>
-      <var-col :span="3">
-        <var-button text type="primary" @click="showRuleDialog = true">
-          <var-icon name="plus" />
+      <var-col offset="2" span="6">
+        <var-button text type="primary" round @click="showRuleDialog = true">
+          <var-icon name="plus" color="#666" :size="22" />
         </var-button>
       </var-col>
-      <var-col :span="3">
-        <var-button text type="primary" round>
-          <var-icon name="cog-outline" color="#00b540" :size="26" />
-        </var-button>
-      </var-col>
-      <var-col :span="3">
+      <var-col span="6">
         <var-button text type="primary" round @click="showHelpDialog = true">
-          <var-icon name="help-circle-outline" color="#00b540" :size="26" />
+          <var-icon name="cog-outline" color="#666" :size="22" />
+        </var-button>
+      </var-col>
+      <var-col span="6">
+        <var-button text type="primary" round @click="showHelpDialog = true">
+          <var-icon name="help-circle-outline" color="#666" :size="22" />
         </var-button>
       </var-col>
     </var-row>

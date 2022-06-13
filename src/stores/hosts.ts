@@ -38,13 +38,19 @@ export const useHostsStore = defineStore('hosts', {
       },
       tmpContent: {},
       systemHosts: '',
-      selected: 'system'
+      selected: 'system' // common、dev、test、prod
     };
   },
   actions: {
-    showSystemHosts: () =>
+    // 显示系统的hosts
+    revealHostsFile: () =>
       window.utools.shellShowItemInFolder(window.hostsFilePath),
-    readSystemHosts: () => window.hosts.read(),
+    // 读取系统的hosts
+    readSystemHosts() {
+      const content = window.hosts.read();
+      return (this.systemHosts = content);
+    },
+    // 改变系统 hosts
     changeHostsContent(payload: any) {
       const { selected, tmpContent } = payload;
       this.systemHosts = tmpContent;

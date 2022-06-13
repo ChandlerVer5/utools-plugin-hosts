@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@cloudbase/js-sdk": "^1.7.2",
-    "@varlet/touch-emulator": "^1.26.2",
-    "@varlet/ui": "^1.26.2",
+    "@varlet/touch-emulator": "^1.27.12",
+    "@varlet/ui": "^1.27.12",
     "cloudbase-adapter-electron": "^1.0.8",
     "monaco-editor": "^0.32.1",
     "pinia": "^2.0.11",
